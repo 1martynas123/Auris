@@ -10,7 +10,7 @@ namespace ConsoleApp1
     {
         static void Main()
         {
-            Console.WriteLine("Hello, new monster DELL G7");
+            Console.WriteLine("Hello, new MONSTER DELL G7");
             Console.ReadLine();
         }
     }
