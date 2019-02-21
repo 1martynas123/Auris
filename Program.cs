@@ -55,11 +55,11 @@ namespace ConsoleApp1
         {    
             numberOfContact = numberOfContact + 1;
            
-            Console.WriteLine("Iveskite Varda");
+            Console.WriteLine("Name: ");
             Name[numberOfContact] = Console.ReadLine();
-            Console.WriteLine("Iveskite Pavarde");
+            Console.WriteLine("Surname: ");
             Surname[numberOfContact] = Console.ReadLine();
-            Console.WriteLine("Iveskite Telefono numeri");
+            Console.WriteLine("Phone number: ");
             Phone[numberOfContact] = Console.ReadLine();
             Contact[numberOfContact] = "\n" + Name[numberOfContact] +" "
                 + Surname[numberOfContact]+"\n" + Phone[numberOfContact];
@@ -85,12 +85,6 @@ namespace ConsoleApp1
           
                 Console.WriteLine("0 Matches Found by the name " + search + "\n");
                 Help();
-            
-
-
-
-
-
         }
         //Remove existing Contact part
         static void Remove()
