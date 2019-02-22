@@ -17,14 +17,13 @@ namespace ConsoleApp1
         static void Main()
         {
 
-            do
-            {
-                if (once == false)
-                {
+           
+                
                     Console.WriteLine("Welcome, to PhoneBook program \n");
                     Help();
-                    once = true;
-                }
+
+            do
+            {
                 string choice = Console.ReadLine();
                 if (choice == "Add")
                 {
