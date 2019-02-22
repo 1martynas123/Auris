@@ -12,49 +12,57 @@ namespace ConsoleApp1
         public static string[] Surname = new string[100];
         public static string[] Phone = new string[100];
         public static bool once = false;
-
+        public static bool andAgain = true;
 
         static void Main()
         {
-           
-           
-            if (once == false)
+
+            do
             {
-                Console.WriteLine("Welcome, to PhoneBook program \n");
-                Help();
-                once = true;
+                if (once == false)
+                {
+                    Console.WriteLine("Welcome, to PhoneBook program \n");
+                    Help();
+                    once = true;
+                }
+                string choice = Console.ReadLine();
+                if (choice == "Add")
+                {
+                    Add();
+                    andAgain = false;
+                }
+                if (choice == "Find")
+                {
+                    Find();
+                    andAgain = false;
+                }
+                if (choice == "Remove")
+                {
+                    Remove();
+                    andAgain = false;
+                }
+                if (choice == "View")
+                {
+                    View();
+                    andAgain = false;
+                }
+                if (choice == "Exit")
+                {
+                    Exit();
+                    andAgain = false;
+                }
+                if (choice == "Help")
+                {
+                    Help();
+                    
+                }
+                else
+                {
+                    andAgain = true;
+                }
+
+            } while (andAgain == true);
             }
-            string choice = Console.ReadLine();
-            if (choice == "Add")
-            {
-                Add();
-            }
-            if (choice == "Find")
-            {
-                Find();
-            }
-            if (choice == "Remove")
-            {
-                Remove();
-            }
-            if (choice == "View")
-            {
-                View();
-            }
-            if (choice == "Exit")
-            {
-                Exit();
-            }
-            if (choice == "Help")
-            {
-                Help();
-                Main();
-            }
-            else {
-                   Main();
-            }
-            Console.ReadLine();
-        }
 
 
         //Create new Contact part
@@ -71,7 +79,7 @@ namespace ConsoleApp1
             Contact[numberOfContact] = "\n" + Name[numberOfContact] +" "
                 + Surname[numberOfContact]+"\n" + Phone[numberOfContact];
             Console.WriteLine("\n"+Contact[numberOfContact]+"\n");
-            Main();
+            andAgain = true;
         }
         //Find existing Contact part
         static void Find()
@@ -88,11 +96,12 @@ namespace ConsoleApp1
                     {
                             Console.WriteLine(Contact[i]);
                             i = numberOfContact;
-                            Main();
-                        
+                        andAgain = true;
+
                     }
+                    else Console.WriteLine("\n 0 Matches Found by the name " + search + "\n");
                 } while (i != numberOfContact);
-                Console.WriteLine("\n 0 Matches Found by the name " + search + "\n");
+               
             } else
             {
                 Console.WriteLine("\n You have 0 contacts \n");
@@ -117,12 +126,10 @@ namespace ConsoleApp1
                     Phone[i] = null;
                     numberOfContact = numberOfContact - 1;
                     i = numberOfContact;
-                    Main();
+                    andAgain = true;
                 }
+                else Console.WriteLine("0 Matches Found by the name " + search + "\n");
             } while (i != numberOfContact);
-          
-                Console.WriteLine("0 Matches Found by the name " + search + "\n");
-                Help();     
         }
         //View all Contacts part
         static void View()
@@ -135,7 +142,7 @@ namespace ConsoleApp1
                     i = i + 1;
                     Console.WriteLine(Contact[i]);
                 } while (i != numberOfContact);
-                Main();
+                andAgain = true;
             }
             else
             {
