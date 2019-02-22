@@ -16,9 +16,6 @@ namespace ConsoleApp1
 
         static void Main()
         {
-
-           
-                
                     Console.WriteLine("Welcome, to PhoneBook program \n");
                     Help();
 
@@ -28,29 +25,29 @@ namespace ConsoleApp1
                 if (choice == "Add")
                 {
                     Add();
-                    andAgain = false;
+                   
                 }
-                if (choice == "Find")
+                else if (choice == "Find")
                 {
                     Find();
-                    andAgain = false;
+                   
                 }
-                if (choice == "Remove")
+                else if (choice == "Remove")
                 {
                     Remove();
-                    andAgain = false;
+                   
                 }
-                if (choice == "View")
+                else if (choice == "View")
                 {
                     View();
-                    andAgain = false;
+                    
                 }
-                if (choice == "Exit")
+                else if (choice == "Exit")
                 {
                     Exit();
-                    andAgain = false;
+                   
                 }
-                if (choice == "Help")
+               else if (choice == "Help")
                 {
                     Help();
                     
