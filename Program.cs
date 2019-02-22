@@ -11,7 +11,6 @@ namespace ConsoleApp1
         public static string[] Name = new string[100];
         public static string[] Surname = new string[100];
         public static string[] Phone = new string[100];
-        public static bool once = false;
         public static bool andAgain = true;
 
         static void Main()
@@ -44,9 +43,7 @@ namespace ConsoleApp1
                     case "HELP":
                         Help();
                         break;
-                    default:
-                        andAgain = true;
-                        break;
+                   
                 }
 
 
@@ -68,7 +65,7 @@ namespace ConsoleApp1
             Contact[numberOfContact] = "\n" + Name[numberOfContact] +" "
                 + Surname[numberOfContact]+"\n" + Phone[numberOfContact];
             Console.WriteLine("\n"+Contact[numberOfContact]+"\n");
-            andAgain = true;
+           
         }
         //Find existing Contact part
         static void Find()
@@ -85,8 +82,7 @@ namespace ConsoleApp1
                     {
                             Console.WriteLine(Contact[i]);
                             i = numberOfContact;
-                        andAgain = true;
-
+                       
                     }
                     else Console.WriteLine("\n 0 Matches Found by the name " + search + "\n");
                 } while (i != numberOfContact);
@@ -115,7 +111,7 @@ namespace ConsoleApp1
                     Phone[i] = null;
                     numberOfContact = numberOfContact - 1;
                     i = numberOfContact;
-                    andAgain = true;
+                   
                 }
                 else Console.WriteLine("0 Matches Found by the name " + search + "\n");
             } while (i != numberOfContact);
@@ -131,7 +127,7 @@ namespace ConsoleApp1
                     i = i + 1;
                     Console.WriteLine(Contact[i]);
                 } while (i != numberOfContact);
-                andAgain = true;
+                
             }
             else
             {
