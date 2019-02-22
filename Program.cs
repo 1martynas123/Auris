@@ -22,40 +22,33 @@ namespace ConsoleApp1
             do
             {
                 string choice = Console.ReadLine();
-                if (choice == "Add")
+                switch (choice.ToUpper())
                 {
-                    Add();
-                   
+                    case "ADD":
+                        Add();
+                        break;
+                    case "FIND":
+                       Find();
+                        break;
+                    case "REMOVE":
+                        Remove();
+                        break;
+                    case "VIEW":
+                        View();
+                        break;
+                    case "EXIT":
+                        Console.WriteLine("Have a good day");
+                        Console.ReadLine();
+                        andAgain = false;
+                        break;
+                    case "HELP":
+                        Help();
+                        break;
+                    default:
+                        andAgain = true;
+                        break;
                 }
-                else if (choice == "Find")
-                {
-                    Find();
-                   
-                }
-                else if (choice == "Remove")
-                {
-                    Remove();
-                   
-                }
-                else if (choice == "View")
-                {
-                    View();
-                    
-                }
-                else if (choice == "Exit")
-                {
-                    Exit();
-                   
-                }
-               else if (choice == "Help")
-                {
-                    Help();
-                    
-                }
-                else
-                {
-                    andAgain = true;
-                }
+
 
             } while (andAgain == true);
             }
@@ -145,10 +138,7 @@ namespace ConsoleApp1
                 Console.WriteLine("\n You have 0 contacts \n");
             }
         }
-        static void Exit()
-        {
-           Environment.Exit(0);
-        }
+       
         static void Help()
         {
             Console.WriteLine("To Add new contact, type (Add)");
