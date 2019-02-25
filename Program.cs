@@ -1,8 +1,9 @@
-﻿using System;
+﻿
+using System;
 
 namespace ConsoleApp1
 {
-  
+
     class Program
     {
         public static int numberOfContact = 0;
@@ -15,8 +16,8 @@ namespace ConsoleApp1
 
         static void Main()
         {
-                    Console.WriteLine("Welcome, to PhoneBook program \n");
-                    Help();
+            Console.WriteLine("Welcome, to PhoneBook program \n");
+            Help();
 
             do
             {
@@ -27,7 +28,7 @@ namespace ConsoleApp1
                         Add();
                         break;
                     case "FIND":
-                       Find();
+                        Find();
                         break;
                     case "REMOVE":
                         Remove();
@@ -43,29 +44,29 @@ namespace ConsoleApp1
                     case "HELP":
                         Help();
                         break;
-                   
+
                 }
 
 
             } while (andAgain == true);
-            }
+        }
 
 
         //Create new Contact part
         static void Add()
-        {    
+        {
             numberOfContact = numberOfContact + 1;
-           
+
             Console.WriteLine("Name: ");
             Name[numberOfContact] = Console.ReadLine();
             Console.WriteLine("Surname: ");
             Surname[numberOfContact] = Console.ReadLine();
             Console.WriteLine("Phone number: ");
             Phone[numberOfContact] = Console.ReadLine();
-            Contact[numberOfContact] = "\n" + Name[numberOfContact] +" "
-                + Surname[numberOfContact]+"\n" + Phone[numberOfContact];
-            Console.WriteLine("\n"+Contact[numberOfContact]+"\n");
-           
+            Contact[numberOfContact] = "\n" + Name[numberOfContact] + " "
+                + Surname[numberOfContact] + "\n" + Phone[numberOfContact];
+            Console.WriteLine("\n" + Contact[numberOfContact] + "\n");
+
         }
         //Find existing Contact part
         static void Find()
@@ -80,21 +81,22 @@ namespace ConsoleApp1
                     i = i + 1;
                     if ((search == Name[i]) || (search == Surname[i]))
                     {
-                            Console.WriteLine(Contact[i]);
-                            i = numberOfContact;
-                       
+                        Console.WriteLine(Contact[i]);
+                        i = numberOfContact;
+
                     }
                     else if (i == numberOfContact)
                     {
                         Console.WriteLine("0 Matches Found by the name " + search + "\n");
                     }
                 } while (i != numberOfContact);
-               
-            } else
+
+            }
+            else
             {
                 Console.WriteLine("\n You have 0 contacts \n");
             }
-           
+
         }
         //Remove existing Contact part
         static void Remove()
@@ -109,7 +111,10 @@ namespace ConsoleApp1
                 {
                     Console.WriteLine(Contact[i] + " Is deleted");
                     Contact[i] = null;
-                   i = numberOfContact;
+                    Name[i] = null;
+                    Surname[i] = null;
+                    Phone[i] = null;
+                    i = numberOfContact;
 
                 }
                 else if (i == numberOfContact)
@@ -129,14 +134,14 @@ namespace ConsoleApp1
                     i = i + 1;
                     Console.WriteLine(Contact[i]);
                 } while (i != numberOfContact);
-                
+
             }
             else
             {
                 Console.WriteLine("\n You have 0 contacts \n");
             }
         }
-       
+
         static void Help()
         {
             Console.WriteLine("To Add new contact, type (Add)");
@@ -145,8 +150,8 @@ namespace ConsoleApp1
             Console.WriteLine("To view all contacts, type (View)");
             Console.WriteLine("To close the program, type (Exit)");
             Console.WriteLine("if you want to see help menu, type (Help) \n");
-            
+
         }
-    
+
     }
 }
