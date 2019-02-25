@@ -84,7 +84,10 @@ namespace ConsoleApp1
                             i = numberOfContact;
                        
                     }
-                    else Console.WriteLine("\n 0 Matches Found by the name " + search + "\n");
+                    else if (i == numberOfContact)
+                    {
+                        Console.WriteLine("0 Matches Found by the name " + search + "\n");
+                    }
                 } while (i != numberOfContact);
                
             } else
@@ -104,16 +107,15 @@ namespace ConsoleApp1
                 i = i + 1;
                 if ((search == Name[i]) || (search == Surname[i]))
                 {
-                    Console.WriteLine(Contact[i]+ " Is deleted");
+                    Console.WriteLine(Contact[i] + " Is deleted");
                     Contact[i] = null;
-                    Name[i] = null;
-                    Surname[i] = null;
-                    Phone[i] = null;
-                    numberOfContact = numberOfContact - 1;
-                    i = numberOfContact;
-                   
+                   i = numberOfContact;
+
                 }
-                else Console.WriteLine("0 Matches Found by the name " + search + "\n");
+                else if (i == numberOfContact)
+                {
+                    Console.WriteLine("0 Matches Found by the name " + search + "\n");
+                }
             } while (i != numberOfContact);
         }
         //View all Contacts part
